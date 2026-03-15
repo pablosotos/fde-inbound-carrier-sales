@@ -24,13 +24,17 @@ async def get_api_key(api_key: str = Depends(api_key_header)):
 
 @app.get("/health")
 def health():
+    print("✅ Health check OK")
     return {"status": "ok"}
+
 
 @app.get("/loads", response_model=List[Load])
 def get_loads(
+    print(f"🔍 Buscando loads con params: {origin}")
     origin: Optional[str] = None,
     destination: Optional[str] = None,
     equipment_type: Optional[str] = None,
     api_key: str = Depends(get_api_key),
 ):
+    print(f"📦 Encontrados {len(loads)} loads")
     return search_loads(origin=origin, destination=destination, equipment_type=equipment_type)
