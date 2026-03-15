@@ -1,0 +1,4 @@
+load_id,origin,destination,pickup_datetime,delivery_datetime,equipment_type,loadboard_rate,notes,weight,commodity_type,num_of_pieces,miles,dimensions
+1,Chicago,New York,2026-03-20T08:00:00,2026-03-21T08:00:00,Dry Van,2500,"No special requirements",20000,Electronics,100,800,"40x8x9"
+2,Los Angeles,Dallas,2026-03-22T09:00:00,2026-03-23T15:00:00,Reefer,3000,"Keep refrigerated",18000,Food,50,1500,"40x8x9"
+3,Houston,Miami,2026-03-25T07:00:00,2026-03-26T18:00:00,Flatbed,2800,"Oversized load - pilot car required",24000,Machinery,10,1188,"48x8x6"
