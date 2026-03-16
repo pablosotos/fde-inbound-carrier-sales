@@ -91,12 +91,13 @@ def dashboard():
     return HTMLResponse(content=DASHBOARD_HTML)
 
 
-DASHBOARD_HTML = """<!DOCTYPE html>
+DASHBOARD_HTML = """\
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>HappyRobot · Carrier Sales Dashboard</title>
+<title>HappyRobot - Carrier Sales Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
@@ -120,19 +121,16 @@ DASHBOARD_HTML = """<!DOCTYPE html>
   --text:     #1a1a18;
   --muted:    #78786e;
   --muted2:   #a8a89c;
-  --mono:     "Space Mono", monospace;
-  --sans:     "DM Sans", sans-serif;
   --radius:   10px;
   --shadow:   0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
   --shadow-md:0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.04);
 }
-body { background: var(--bg); color: var(--text); font-family: var(--sans); min-height: 100vh; }
+body { background: var(--bg); color: var(--text); font-family: "DM Sans", sans-serif; min-height: 100vh; }
 
+/* HEADER */
 header {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  position: sticky; top: 0; z-index: 50;
-  box-shadow: var(--shadow);
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 50; box-shadow: var(--shadow);
 }
 .header-inner {
   max-width: 1400px; margin: 0 auto;
@@ -140,28 +138,24 @@ header {
   padding: 0 36px; height: 64px;
 }
 .logo-wrap { display: flex; align-items: center; gap: 16px; }
+.logo-img { height: 30px; width: auto; display: block; }
 .divider { width: 1px; height: 24px; background: var(--border2); }
-.header-tag {
-  font-family: var(--mono); font-size: 10px;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
-}
+.header-tag { font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .header-right { display: flex; align-items: center; gap: 16px; }
-#ts { font-family: var(--mono); font-size: 10px; color: var(--muted2); }
+#ts { font-family: "Space Mono", monospace; font-size: 10px; color: var(--muted2); }
 .refresh-btn {
-  font-family: var(--mono); font-size: 10px; letter-spacing: .1em;
+  font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: .1em;
   text-transform: uppercase; color: var(--muted);
   background: var(--surface2); border: 1px solid var(--border2);
   border-radius: 6px; padding: 6px 12px; cursor: pointer; transition: all .15s;
 }
 .refresh-btn:hover { background: var(--bg); color: var(--text); }
 
-main {
-  max-width: 1400px; margin: 0 auto;
-  padding: 32px 36px 64px;
-  opacity: 0; transition: opacity .4s ease;
-}
+/* MAIN */
+main { max-width: 1400px; margin: 0 auto; padding: 32px 36px 64px; opacity: 0; transition: opacity .4s ease; }
 main.show { opacity: 1; }
 
+/* KPI */
 .kpi-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 24px; }
 .kpi {
   background: var(--surface); border: 1px solid var(--border);
@@ -170,54 +164,43 @@ main.show { opacity: 1; }
 }
 .kpi:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
 .kpi-icon {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border-radius: 8px; font-size: 16px; margin-bottom: 14px;
+  width: 36px; height: 36px; border-radius: 8px;
+  margin-bottom: 14px; display: flex; align-items: center; justify-content: center;
 }
-.kpi.amber  .kpi-icon { background: var(--amber-l); }
-.kpi.green  .kpi-icon { background: var(--green-l); }
-.kpi.blue   .kpi-icon { background: var(--blue-l); }
+.kpi-icon svg { width: 18px; height: 18px; }
+.kpi.amber .kpi-icon { background: var(--amber-l); }
+.kpi.green .kpi-icon { background: var(--green-l); }
+.kpi.blue  .kpi-icon { background: var(--blue-l); }
 .kpi.purple .kpi-icon { background: var(--purple-l); }
 .kpi-label { font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
-.kpi-val { font-family: var(--mono); font-size: 36px; font-weight: 700; line-height: 1; }
+.kpi-val { font-family: "Space Mono", monospace; font-size: 36px; font-weight: 700; line-height: 1; }
 .kpi.amber  .kpi-val { color: var(--amber); }
 .kpi.green  .kpi-val { color: var(--green); }
 .kpi.blue   .kpi-val { color: var(--blue); }
 .kpi.purple .kpi-val { color: var(--purple); }
 .kpi-sub { font-size: 12px; color: var(--muted2); margin-top: 8px; }
 
+/* GRIDS */
 .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow);
-}
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
 .card-title {
-  font-size: 12px; font-weight: 600; letter-spacing: .03em;
-  color: var(--muted); text-transform: uppercase;
-  margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+  font-size: 12px; font-weight: 600; letter-spacing: .03em; color: var(--muted);
+  text-transform: uppercase; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
 }
 .card canvas { max-height: 220px; }
 
+/* ROUTES */
 .rtable { width: 100%; border-collapse: collapse; }
-.rtable th {
-  font-size: 11px; font-weight: 600; color: var(--muted2);
-  text-align: left; padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-  text-transform: uppercase; letter-spacing: .06em;
-}
+.rtable th { font-size: 11px; font-weight: 600; color: var(--muted2); text-align: left; padding-bottom: 10px; border-bottom: 1px solid var(--border); text-transform: uppercase; letter-spacing: .06em; }
 .rtable td { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; vertical-align: middle; }
-.rtable td:last-child { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--blue); text-align: right; width: 40px; }
+.rtable td:last-child { font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700; color: var(--blue); text-align: right; width: 40px; }
 .bar-wrap { display: flex; align-items: center; gap: 10px; }
 .mini-bar { height: 4px; background: var(--blue); border-radius: 99px; opacity: .25; min-width: 4px; }
 
-#loader {
-  position: fixed; inset: 0; z-index: 200; background: var(--bg);
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
-}
-.spin {
-  width: 32px; height: 32px; border: 2px solid var(--border2);
-  border-top-color: var(--text); border-radius: 50%; animation: spin .7s linear infinite;
-}
+/* LOADER */
+#loader { position: fixed; inset: 0; z-index: 200; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; }
+.spin { width: 32px; height: 32px; border: 2px solid var(--border2); border-top-color: var(--text); border-radius: 50%; animation: spin .7s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 #loader p { font-size: 13px; color: var(--muted); }
 
@@ -231,57 +214,69 @@ main.show { opacity: 1; }
 </head>
 <body>
 
-<div id="loader"><div class="spin"></div><p>Loading carrier dataâ¦</p></div>
+<div id="loader"><div class="spin"></div><p>Loading carrier data...</p></div>
 
 <header>
   <div class="header-inner">
     <div class="logo-wrap">
-      <!-- HappyRobot logo recreated as inline SVG -->
-      <svg width="160" height="32" viewBox="0 0 160 32" xmlns="http://www.w3.org/2000/svg">
-        <!-- Icon mark: two interlocking rounded shapes -->
-        <rect x="0"  y="0"  width="12" height="20" rx="5" ry="5" fill="#2d2d2b"/>
-        <rect x="8"  y="0"  width="12" height="20" rx="5" ry="5" fill="#2d2d2b"/>
-        <rect x="4"  y="10" width="12" height="20" rx="5" ry="5" fill="#2d2d2b"/>
-        <rect x="12" y="10" width="12" height="20" rx="5" ry="5" fill="#2d2d2b"/>
-        <!-- Wordmark -->
-        <text x="34" y="23" font-family="'DM Sans', sans-serif" font-size="19" font-weight="700" fill="#2d2d2b" letter-spacing="-0.3">HappyRobot</text>
-      </svg>
+      <img class="logo-img" src="/static/HappyRobot.webp" alt="HappyRobot"/>
       <div class="divider"></div>
-      <span class="header-tag">Carrier Sales · Swift Cargo Brokers · Operations</span>
+      <span class="header-tag">Carrier Sales &middot; Operations</span>
     </div>
     <div class="header-right">
-      <span id="ts">â</span>
-      <button class="refresh-btn" onclick="reload()">â» Refresh</button>
+      <span id="ts"></span>
+      <button class="refresh-btn" onclick="location.reload()">&#8635; Refresh</button>
     </div>
   </div>
 </header>
 
 <main id="main">
   <div class="kpi-row">
+
     <div class="kpi amber">
-      <div class="kpi-icon">ð</div>
+      <div class="kpi-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18 2 2 0 012.11 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+        </svg>
+      </div>
       <div class="kpi-label">Total Calls</div>
-      <div class="kpi-val" id="k-total">â</div>
+      <div class="kpi-val" id="k-total">-</div>
       <div class="kpi-sub">Inbound carrier calls logged</div>
     </div>
+
     <div class="kpi green">
-      <div class="kpi-icon">â</div>
+      <div class="kpi-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </div>
       <div class="kpi-label">Close Rate</div>
-      <div class="kpi-val" id="k-deal">â</div>
+      <div class="kpi-val" id="k-deal">-</div>
       <div class="kpi-sub">Loads successfully booked</div>
     </div>
+
     <div class="kpi blue">
-      <div class="kpi-icon">ð°</div>
+      <div class="kpi-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+        </svg>
+      </div>
       <div class="kpi-label">Avg Rate Delta</div>
-      <div class="kpi-val" id="k-delta">â</div>
+      <div class="kpi-val" id="k-delta">-</div>
       <div class="kpi-sub">Agreed vs. loadboard rate</div>
     </div>
+
     <div class="kpi purple">
-      <div class="kpi-icon">ð</div>
+      <div class="kpi-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 014-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 01-4 4H3"/>
+        </svg>
+      </div>
       <div class="kpi-label">Avg Neg. Rounds</div>
-      <div class="kpi-val" id="k-rounds">â</div>
+      <div class="kpi-val" id="k-rounds">-</div>
       <div class="kpi-sub">Rounds needed to close</div>
     </div>
+
   </div>
 
   <div class="grid-3">
@@ -301,7 +296,7 @@ main.show { opacity: 1; }
 
   <div class="grid-2">
     <div class="card">
-      <div class="card-title">Loadboard Rate vs. Agreed Rate â last 10 calls</div>
+      <div class="card-title">Loadboard Rate vs. Agreed Rate &mdash; last 10 calls</div>
       <canvas id="c-rates"></canvas>
     </div>
     <div class="card">
@@ -335,7 +330,7 @@ function donut(id, labels, values, colors) {
 
 function buildRoutes(routes) {
   const el = document.getElementById("routes-wrap");
-  if (!routes.length) { el.innerHTML = "<p style='color:var(--muted2);font-size:13px;margin-top:8px'>No data yet</p>"; return; }
+  if (!routes.length) { el.innerHTML = "<p style='color:#a8a89c;font-size:13px;margin-top:8px'>No data yet</p>"; return; }
   const max = routes[0].count;
   el.innerHTML = "<table class='rtable'><thead><tr><th>Route</th><th style='text-align:right'>Calls</th></tr></thead><tbody>"
     + routes.map(r => "<tr><td><div class='bar-wrap'><div class='mini-bar' style='width:"
@@ -384,7 +379,6 @@ async function load() {
   document.getElementById("main").classList.add("show");
 }
 
-function reload() { location.reload(); }
 load();
 </script>
 </body>
