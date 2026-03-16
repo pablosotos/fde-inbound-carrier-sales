@@ -221,7 +221,7 @@ main.show { opacity: 1; }
     <div class="logo-wrap">
       <img class="logo-img" src="/static/HappyRobot.webp" alt="HappyRobot"/>
       <div class="divider"></div>
-      <span class="header-tag">Carrier Sales &middot; Operations</span>
+      <span class="header-tag">Swift Cargo Brokers &middot; Carrier Sales &middot; Operations</span>
     </div>
     <div class="header-right">
       <span id="ts"></span>
