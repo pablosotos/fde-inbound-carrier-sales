@@ -8,7 +8,7 @@ DATA_FILE = Path(__file__).resolve().parent.parent / "loads.csv"
 def load_all() -> List[Load]:
     loads = []
     with open(DATA_FILE, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+        reader = csv.DictReader(f, delimiter=";")
         for row in reader:
             row["loadboard_rate"] = float(row["loadboard_rate"])
             row["weight"] = float(row["weight"])
