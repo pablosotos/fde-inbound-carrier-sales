@@ -1,4 +1,201 @@
-load_id,origin,destination,pickup_datetime,delivery_datetime,equipment_type,loadboard_rate,notes,weight,commodity_type,num_of_pieces,miles,dimensions
-1,Chicago,New York,2026-03-20T08:00:00,2026-03-21T08:00:00,Dry Van,2500,"No special requirements",20000,Electronics,100,800,"40x8x9"
-2,Los Angeles,Dallas,2026-03-22T09:00:00,2026-03-23T15:00:00,Reefer,3000,"Keep refrigerated",18000,Food,50,1500,"40x8x9"
-3,Houston,Miami,2026-03-25T07:00:00,2026-03-26T18:00:00,Flatbed,2800,"Oversized load - pilot car required",24000,Machinery,10,1188,"48x8x6"
+load_id;origin;destination;pickup_datetime;delivery_datetime;equipment_type;loadboard_rate;notes;weight;commodity_type;num_of_pieces;miles;dimensions
+1;Chicago;Philadelphia;2026-04-17T13:00:00;2026-04-22T19:00:00;Tanker;3000;Liftgate required at delivery;9205;Lumber;157;1059;40x8x8
+2;Sacramento;Louisville;2026-04-18T10:00:00;2026-04-21T13:00:00;Lowboy;6400;Time sensitive delivery;40311;Pharmaceuticals;160;2170;40x8x4
+3;Houston;Denver;2026-03-29T14:00:00;2026-04-03T20:00:00;Flatbed;4800;Liftgate required at delivery;8797;Food;72;1744;40x8x5
+4;Fort Worth;Houston;2026-04-13T09:00:00;2026-04-15T10:00:00;Tanker;1000;Liftgate required at delivery;8756;Food;70;397;40x8x8
+5;Oklahoma City;Pittsburgh;2026-04-18T06:00:00;2026-04-23T11:00:00;Tanker;5700;Team drivers required;18599;Pharmaceuticals;183;1571;40x8x8
+6;Indianapolis;Orlando;2026-04-12T09:00:00;2026-04-14T16:00:00;Step Deck;8500;Residential delivery;5450;Medical Supplies;174;1915;48x8x10
+7;Tampa;Boston;2026-04-26T11:00:00;2026-05-01T18:00:00;Lowboy;3000;No touch freight;28328;Paper Products;29;757;40x8x4
+8;Seattle;New Orleans;2026-03-21T11:00:00;2026-03-26T16:00:00;Box Truck;3400;Oversized load - pilot car required;37582;Electronics;10;1634;24x8x8
+9;Mesa;Memphis;2026-04-11T13:00:00;2026-04-12T16:00:00;Lowboy;5500;Team drivers required;38012;Machinery;181;1290;40x8x4
+10;Milwaukee;Austin;2026-04-26T07:00:00;2026-04-30T09:00:00;Box Truck;1700;Call before delivery;26893;Clothing;137;557;26x8x8
+11;El Paso;Tucson;2026-03-26T07:00:00;2026-03-29T13:00:00;Lowboy;2300;Call before delivery;42933;Hardware;66;592;40x8x4
+12;Philadelphia;Atlanta;2026-04-03T06:00:00;2026-04-05T09:00:00;Reefer;2800;Team drivers required;29036;Hardware;133;1190;48x8x9
+13;Nashville;Austin;2026-04-16T07:00:00;2026-04-20T08:00:00;Step Deck;2700;Fragile - handle with care;11624;Hardware;43;798;53x8x10
+14;Baltimore;Seattle;2026-04-01T09:00:00;2026-04-02T12:00:00;Reefer;1900;Chains and binders required;31491;Beverages;28;677;48x8x9
+15;Denver;Jacksonville;2026-05-02T09:00:00;2026-05-04T09:00:00;Reefer;4600;Call before delivery;12004;Building Materials;32;1527;53x8x9
+16;El Paso;Raleigh;2026-04-22T06:00:00;2026-04-27T14:00:00;Dry Van;900;Keep refrigerated;20278;Beverages;62;280;40x8x9
+17;Albuquerque;Nashville;2026-04-11T14:00:00;2026-04-12T20:00:00;Step Deck;6900;Temperature controlled 34-38F;19317;Lumber;45;1602;53x8x10
+18;San Jose;Atlanta;2026-03-25T09:00:00;2026-03-30T13:00:00;Reefer;3500;Residential delivery;17801;Lumber;154;948;53x8x9
+19;San Antonio;Milwaukee;2026-05-02T08:00:00;2026-05-06T14:00:00;Tanker;6700;Time sensitive delivery;29672;Paper Products;116;2486;40x8x8
+20;Fresno;Minneapolis;2026-04-26T09:00:00;2026-04-27T13:00:00;Dry Van;700;Liftgate required at delivery;31772;Produce;77;340;53x8x9
+21;Philadelphia;Charlotte;2026-04-18T11:00:00;2026-04-19T14:00:00;Box Truck;2100;Team drivers required;25720;Machinery;111;814;26x8x8
+22;Orlando;Denver;2026-03-27T10:00:00;2026-03-30T15:00:00;Reefer;4600;Do not stack;41836;Electronics;56;1939;40x8x9
+23;New York;Albuquerque;2026-04-19T07:00:00;2026-04-24T12:00:00;Lowboy;2000;Fragile - handle with care;39168;Produce;114;502;40x8x4
+24;Portland;Miami;2026-05-01T10:00:00;2026-05-03T16:00:00;Dry Van;3600;Liftgate required at delivery;40863;Paper Products;68;1213;48x8x9
+25;Denver;Fort Worth;2026-03-30T06:00:00;2026-04-04T14:00:00;Lowboy;6500;Call before delivery;30217;Clothing;146;1857;48x8x4
+26;New Orleans;Tampa;2026-03-29T11:00:00;2026-04-02T17:00:00;Flatbed;2400;No touch freight;36715;Clothing;158;1148;40x8x5
+27;Indianapolis;Charlotte;2026-04-03T07:00:00;2026-04-06T11:00:00;Box Truck;6700;Oversized load - pilot car required;9523;Agricultural Products;178;2292;26x8x8
+28;Pittsburgh;New Orleans;2026-04-05T12:00:00;2026-04-07T14:00:00;Dry Van;4800;Stackable cargo;23968;Food;181;2135;48x8x9
+29;Raleigh;Fresno;2026-04-04T14:00:00;2026-04-09T16:00:00;Flatbed;900;Hazmat - proper documentation required;8377;Plastic Products;27;298;40x8x5
+30;Boston;Tampa;2026-04-30T14:00:00;2026-05-02T21:00:00;Box Truck;4500;Team drivers required;16478;Automotive Parts;137;2219;26x8x8
+31;San Diego;Cincinnati;2026-04-23T08:00:00;2026-04-25T09:00:00;Box Truck;4500;Tarp required;28092;Chemicals;98;2444;24x8x8
+32;Mesa;San Antonio;2026-04-05T13:00:00;2026-04-09T13:00:00;Box Truck;3600;Fragile - handle with care;14734;Food;80;1674;26x8x8
+33;Nashville;San Antonio;2026-04-01T08:00:00;2026-04-04T16:00:00;Tanker;4300;No touch freight;5446;Plastic Products;9;1074;40x8x8
+34;Miami;Boston;2026-03-30T08:00:00;2026-04-04T10:00:00;Step Deck;4900;Residential delivery;31734;Pharmaceuticals;102;1807;53x8x10
+35;Memphis;Salt Lake City;2026-03-26T13:00:00;2026-03-29T18:00:00;Lowboy;6000;Stackable cargo;13253;Pharmaceuticals;104;1489;40x8x4
+36;San Francisco;Salt Lake City;2026-04-09T09:00:00;2026-04-14T17:00:00;Flatbed;2000;Chains and binders required;33919;Chemicals;29;700;48x8.5x6
+37;New York;Omaha;2026-04-28T10:00:00;2026-05-01T13:00:00;Flatbed;1900;Keep refrigerated;37994;Medical Supplies;9;1072;48x8x6
+38;Salt Lake City;Chicago;2026-04-19T09:00:00;2026-04-20T15:00:00;Step Deck;6300;Temperature controlled 34-38F;32631;Chemicals;113;1950;53x8x10
+39;Tucson;Raleigh;2026-04-29T11:00:00;2026-05-03T16:00:00;Reefer;5300;No special requirements;18956;Produce;121;1884;48x8x9
+40;Austin;San Jose;2026-04-20T09:00:00;2026-04-24T14:00:00;Step Deck;4800;Keep refrigerated;41466;Produce;82;1483;53x8x10
+41;Charlotte;Orlando;2026-04-22T14:00:00;2026-04-23T16:00:00;Step Deck;8400;Driver assist needed;6294;Building Materials;118;2038;48x8x10
+42;San Antonio;Atlanta;2026-04-04T07:00:00;2026-04-06T11:00:00;Step Deck;6400;Residential delivery;39328;Lumber;196;2487;53x8x10
+43;San Diego;Portland;2026-03-25T11:00:00;2026-03-29T13:00:00;Box Truck;6700;Residential delivery;26991;Furniture;91;2365;26x8x8
+44;Charlotte;New York;2026-04-18T12:00:00;2026-04-23T18:00:00;Tanker;900;No touch freight;7838;Agricultural Products;79;377;40x8x8
+45;Jacksonville;Indianapolis;2026-05-01T14:00:00;2026-05-06T22:00:00;Dry Van;3700;Temperature controlled 34-38F;14825;Appliances;183;1604;53x8x9
+46;Pittsburgh;Boston;2026-04-18T12:00:00;2026-04-22T14:00:00;Box Truck;3300;No special requirements;13087;Appliances;90;1291;26x8x8
+47;Boston;Raleigh;2026-03-22T07:00:00;2026-03-25T11:00:00;Flatbed;3600;Time sensitive delivery;8713;Food;66;1329;40x8x5
+48;Detroit;Tucson;2026-04-04T08:00:00;2026-04-06T08:00:00;Reefer;6400;No touch freight;14731;Steel;61;1742;53x8x9
+49;Dallas;Tucson;2026-03-31T11:00:00;2026-04-05T14:00:00;Box Truck;6900;Lumper service available;13159;Plastic Products;165;2180;24x8x8
+50;Denver;Detroit;2026-04-09T09:00:00;2026-04-11T13:00:00;Dry Van;1500;Chains and binders required;15603;Hardware;8;436;53x8x9
+51;Atlanta;Philadelphia;2026-04-03T11:00:00;2026-04-05T18:00:00;Step Deck;5800;Call before delivery;32301;Clothing;79;1503;53x8x10
+52;Jacksonville;Memphis;2026-04-17T11:00:00;2026-04-22T17:00:00;Dry Van;3600;Keep refrigerated;18578;Plastic Products;180;1249;53x8x9
+53;El Paso;Pittsburgh;2026-04-02T10:00:00;2026-04-07T18:00:00;Reefer;4800;Do not stack;12242;Paper Products;17;1346;40x8x9
+54;Albuquerque;Indianapolis;2026-04-12T07:00:00;2026-04-15T10:00:00;Reefer;9200;Residential delivery;12608;Medical Supplies;58;2410;40x8x9
+55;Pittsburgh;Nashville;2026-03-27T11:00:00;2026-03-30T19:00:00;Lowboy;7500;Time sensitive delivery;31917;Pharmaceuticals;61;2193;40x8x4
+56;Tucson;Phoenix;2026-04-09T13:00:00;2026-04-10T18:00:00;Tanker;3200;No touch freight;25160;Food;24;926;40x8x8
+57;Seattle;Cleveland;2026-03-27T14:00:00;2026-03-28T21:00:00;Tanker;1200;Time sensitive delivery;6835;Steel;76;300;40x8x8
+58;Dallas;St. Louis;2026-03-24T13:00:00;2026-03-25T17:00:00;Dry Van;1300;No touch freight;6609;Pharmaceuticals;23;422;53x8x9
+59;Louisville;St. Louis;2026-04-06T09:00:00;2026-04-07T15:00:00;Reefer;500;Time sensitive delivery;18826;Appliances;54;205;40x8x9
+60;Atlanta;Milwaukee;2026-03-29T08:00:00;2026-04-01T14:00:00;Lowboy;1200;Hazmat - proper documentation required;6612;Beverages;168;303;40x8x4
+61;Milwaukee;Seattle;2026-03-23T10:00:00;2026-03-26T11:00:00;Box Truck;2000;Residential delivery;23067;Pharmaceuticals;192;698;24x8x8
+62;Tucson;San Jose;2026-03-24T14:00:00;2026-03-27T15:00:00;Reefer;4300;Call before delivery;26164;Electronics;62;1828;40x8x9
+63;Dallas;Jacksonville;2026-04-11T09:00:00;2026-04-14T15:00:00;Lowboy;1500;Hazmat - proper documentation required;18916;Textiles;142;408;48x8x4
+64;Seattle;Austin;2026-03-30T09:00:00;2026-04-01T12:00:00;Dry Van;1400;Oversized load - pilot car required;6491;Agricultural Products;58;426;48x8x9
+65;Oklahoma City;Denver;2026-04-26T10:00:00;2026-04-27T17:00:00;Flatbed;2200;Hazmat - proper documentation required;12756;Chemicals;164;994;48x8x6
+66;Dallas;San Antonio;2026-04-17T10:00:00;2026-04-19T16:00:00;Tanker;8400;Residential delivery;17544;Furniture;58;2406;40x8x8
+67;Los Angeles;Salt Lake City;2026-04-22T13:00:00;2026-04-24T20:00:00;Box Truck;3400;Stackable cargo;44378;Beverages;116;1604;26x8x8
+68;Albuquerque;Omaha;2026-03-22T13:00:00;2026-03-24T17:00:00;Flatbed;5600;Time sensitive delivery;36142;Steel;79;1802;48x8.5x6
+69;New Orleans;Denver;2026-03-21T06:00:00;2026-03-23T11:00:00;Tanker;6900;Team drivers required;27821;Produce;13;2088;40x8x8
+70;Boston;Philadelphia;2026-04-07T13:00:00;2026-04-12T20:00:00;Tanker;2100;Lumper service available;44307;Produce;179;637;40x8x8
+71;Minneapolis;Chicago;2026-04-26T11:00:00;2026-05-01T11:00:00;Box Truck;4600;Inside delivery requested;31102;Plastic Products;171;1392;24x8x8
+72;Las Vegas;Detroit;2026-04-25T07:00:00;2026-04-28T09:00:00;Tanker;9200;Lumper service available;22841;Automotive Parts;142;2436;40x8x8
+73;Milwaukee;Nashville;2026-05-02T13:00:00;2026-05-04T18:00:00;Lowboy;3600;Lumper service available;32961;Electronics;196;844;40x8x4
+74;Raleigh;New Orleans;2026-04-23T08:00:00;2026-04-24T12:00:00;Box Truck;1600;Liftgate required at delivery;23339;Clothing;102;585;26x8x8
+75;Tucson;Memphis;2026-04-15T07:00:00;2026-04-20T12:00:00;Reefer;4100;Do not stack;42695;Beverages;106;1446;48x8x9
+76;Cincinnati;Salt Lake City;2026-03-27T12:00:00;2026-03-29T13:00:00;Flatbed;4000;Do not stack;20729;Pharmaceuticals;70;1960;48x8x6
+77;Jacksonville;Sacramento;2026-04-19T13:00:00;2026-04-20T16:00:00;Step Deck;6900;Appointment required;17558;Chemicals;158;1984;53x8x10
+78;Phoenix;Austin;2026-04-20T11:00:00;2026-04-24T12:00:00;Box Truck;2000;Fragile - handle with care;6327;Electronics;62;677;26x8x8
+79;San Diego;Houston;2026-04-06T13:00:00;2026-04-07T15:00:00;Dry Van;2100;Time sensitive delivery;35061;Plastic Products;65;699;40x8x9
+80;Jacksonville;Albuquerque;2026-04-27T13:00:00;2026-04-29T21:00:00;Reefer;4600;Oversized load - pilot car required;30441;Machinery;188;1122;53x8x9
+81;Fresno;Portland;2026-04-17T08:00:00;2026-04-18T08:00:00;Step Deck;3400;Hazmat - proper documentation required;10648;Automotive Parts;177;1075;48x8x10
+82;Austin;Fresno;2026-03-28T07:00:00;2026-03-30T11:00:00;Step Deck;6600;Keep refrigerated;6214;Agricultural Products;129;1895;53x8x10
+83;Los Angeles;Atlanta;2026-04-23T07:00:00;2026-04-26T13:00:00;Box Truck;8000;Hazmat - proper documentation required;16360;Chemicals;15;2336;24x8x8
+84;Atlanta;Salt Lake City;2026-04-05T12:00:00;2026-04-06T19:00:00;Flatbed;5600;Stackable cargo;19717;Building Materials;63;2449;48x8x6
+85;Austin;Tucson;2026-03-22T13:00:00;2026-03-24T14:00:00;Box Truck;400;Liftgate required at delivery;29912;Plastic Products;35;209;24x8x8
+86;Boston;Indianapolis;2026-04-07T07:00:00;2026-04-12T13:00:00;Step Deck;3500;No touch freight;18585;Medical Supplies;124;1217;53x8x10
+87;Fresno;Charlotte;2026-04-18T06:00:00;2026-04-21T07:00:00;Step Deck;4200;Stackable cargo;9143;Automotive Parts;80;1411;53x8x10
+88;San Jose;San Antonio;2026-04-21T08:00:00;2026-04-25T13:00:00;Flatbed;4900;Tarp required;24349;Chemicals;197;2003;48x8.5x6
+89;Jacksonville;Cincinnati;2026-04-06T09:00:00;2026-04-07T09:00:00;Reefer;3200;No special requirements;14547;Beverages;91;1206;40x8x9
+90;Los Angeles;Atlanta;2026-05-03T13:00:00;2026-05-07T17:00:00;Box Truck;5600;Driver assist needed;22902;Beverages;193;1760;26x8x8
+91;Albuquerque;Sacramento;2026-04-30T09:00:00;2026-05-01T15:00:00;Lowboy;5200;Keep refrigerated;37605;Appliances;52;1744;48x8x4
+92;Kansas City;Sacramento;2026-04-22T14:00:00;2026-04-27T14:00:00;Reefer;5900;Liftgate required at delivery;35937;Furniture;48;1948;53x8x9
+93;San Francisco;Miami;2026-03-29T07:00:00;2026-03-31T11:00:00;Step Deck;7400;Inside delivery requested;41082;Medical Supplies;33;1667;53x8x10
+94;Houston;San Antonio;2026-04-17T07:00:00;2026-04-21T14:00:00;Reefer;9100;Appointment required;35698;Food;109;2394;40x8x9
+95;San Diego;Seattle;2026-04-14T08:00:00;2026-04-18T11:00:00;Dry Van;5800;Appointment required;23756;Furniture;194;1721;48x8x9
+96;Baltimore;San Diego;2026-04-03T12:00:00;2026-04-08T14:00:00;Step Deck;8300;Do not stack;43558;Medical Supplies;119;2029;53x8x10
+97;Las Vegas;Louisville;2026-05-02T08:00:00;2026-05-06T13:00:00;Dry Van;2300;Keep refrigerated;35589;Electronics;11;983;40x8x9
+98;Minneapolis;Louisville;2026-03-25T12:00:00;2026-03-27T18:00:00;Flatbed;3400;Call before delivery;43503;Steel;166;1092;40x8x5
+99;Charlotte;San Francisco;2026-03-22T12:00:00;2026-03-26T19:00:00;Box Truck;3500;Lumper service available;23510;Beverages;26;1729;26x8x8
+100;Nashville;Boston;2026-04-18T11:00:00;2026-04-23T12:00:00;Dry Van;4400;Do not stack;13376;Paper Products;80;1747;53x8x9
+101;El Paso;Cleveland;2026-04-07T08:00:00;2026-04-11T13:00:00;Lowboy;1200;Temperature controlled 34-38F;13734;Food;122;314;48x8x4
+102;Denver;Baton Rouge;2026-04-11T13:00:00;2026-04-13T21:00:00;Lowboy;2400;Temperature controlled 34-38F;19606;Agricultural Products;52;664;48x8x4
+103;Pittsburgh;Atlanta;2026-04-11T12:00:00;2026-04-14T16:00:00;Reefer;4900;Liftgate required at delivery;39713;Textiles;28;1815;53x8x9
+104;Salt Lake City;Las Vegas;2026-04-19T13:00:00;2026-04-23T21:00:00;Tanker;4000;Time sensitive delivery;27847;Appliances;155;1113;40x8x8
+105;Albuquerque;Phoenix;2026-04-19T13:00:00;2026-04-21T14:00:00;Step Deck;5600;Lumper service available;17760;Machinery;14;1416;53x8x10
+106;Milwaukee;Fort Worth;2026-03-30T12:00:00;2026-03-31T15:00:00;Reefer;6700;No special requirements;15172;Chemicals;32;2137;53x8x9
+107;Minneapolis;Houston;2026-04-13T13:00:00;2026-04-17T13:00:00;Flatbed;4800;Residential delivery;14186;Paper Products;85;1577;48x8.5x6
+108;Boston;Oklahoma City;2026-04-16T09:00:00;2026-04-20T12:00:00;Dry Van;3300;Appointment required;34545;Electronics;113;1006;53x8x9
+109;Kansas City;Portland;2026-03-21T12:00:00;2026-03-22T13:00:00;Box Truck;5200;Lumper service available;10057;Furniture;11;1701;24x8x8
+110;Chicago;Boston;2026-03-26T06:00:00;2026-03-30T08:00:00;Box Truck;4200;No special requirements;21474;Electronics;87;2150;26x8x8
+111;Pittsburgh;Memphis;2026-04-15T10:00:00;2026-04-16T11:00:00;Box Truck;3200;Inside delivery requested;34149;Chemicals;33;1190;24x8x8
+112;Atlanta;Phoenix;2026-04-10T08:00:00;2026-04-11T10:00:00;Step Deck;3700;Driver assist needed;33597;Produce;81;980;48x8x10
+113;Phoenix;Albuquerque;2026-04-04T10:00:00;2026-04-09T11:00:00;Step Deck;10900;No touch freight;42685;Produce;10;2478;53x8x10
+114;Nashville;Charlotte;2026-03-28T06:00:00;2026-03-30T10:00:00;Dry Van;1800;Team drivers required;7971;Building Materials;192;611;40x8x9
+115;Memphis;Los Angeles;2026-04-04T13:00:00;2026-04-05T15:00:00;Step Deck;3200;Do not stack;27387;Clothing;170;1321;48x8x10
+116;Salt Lake City;El Paso;2026-04-28T10:00:00;2026-04-29T12:00:00;Reefer;6500;Inside delivery requested;12945;Chemicals;130;2495;48x8x9
+117;Philadelphia;Orlando;2026-03-21T14:00:00;2026-03-26T19:00:00;Dry Van;5100;Appointment required;34499;Machinery;143;1882;48x8x9
+118;Los Angeles;Mesa;2026-03-30T14:00:00;2026-04-03T18:00:00;Reefer;5000;No special requirements;12223;Pharmaceuticals;15;1490;48x8x9
+119;Houston;Kansas City;2026-04-14T07:00:00;2026-04-19T15:00:00;Reefer;500;Keep refrigerated;26987;Produce;193;200;53x8x9
+120;San Francisco;San Antonio;2026-04-04T08:00:00;2026-04-09T13:00:00;Tanker;4400;Time sensitive delivery;16727;Automotive Parts;20;1838;40x8x8
+121;Los Angeles;Tucson;2026-03-31T12:00:00;2026-04-05T16:00:00;Box Truck;6400;Tarp required;24766;Steel;112;2372;26x8x8
+122;Sacramento;Salt Lake City;2026-04-22T07:00:00;2026-04-26T13:00:00;Lowboy;7800;No special requirements;33847;Plastic Products;188;2083;40x8x4
+123;Sacramento;Albuquerque;2026-04-13T06:00:00;2026-04-16T11:00:00;Box Truck;1700;Liftgate required at delivery;37844;Agricultural Products;141;851;24x8x8
+124;Los Angeles;Tucson;2026-04-06T08:00:00;2026-04-07T10:00:00;Reefer;7500;Driver assist needed;7829;Plastic Products;48;2101;48x8x9
+125;Cleveland;Houston;2026-04-22T09:00:00;2026-04-23T11:00:00;Lowboy;4400;Lumper service available;9743;Automotive Parts;66;1554;40x8x4
+126;Cleveland;Omaha;2026-04-24T08:00:00;2026-04-25T12:00:00;Flatbed;6400;Team drivers required;22754;Agricultural Products;133;1927;40x8x5
+127;Boston;Tucson;2026-03-20T14:00:00;2026-03-24T21:00:00;Reefer;3100;Team drivers required;22749;Pharmaceuticals;2;913;40x8x9
+128;San Jose;Phoenix;2026-03-28T09:00:00;2026-03-30T09:00:00;Lowboy;7000;Tarp required;9741;Paper Products;106;2391;40x8x4
+129;St. Louis;Mesa;2026-04-27T11:00:00;2026-04-29T18:00:00;Lowboy;5100;Driver assist needed;39201;Machinery;156;1264;40x8x4
+130;Raleigh;Columbus;2026-05-03T12:00:00;2026-05-07T17:00:00;Step Deck;3700;Lumper service available;38514;Produce;147;957;48x8x10
+131;Detroit;Las Vegas;2026-03-22T08:00:00;2026-03-24T12:00:00;Lowboy;7400;Inside delivery requested;32382;Building Materials;37;2352;40x8x4
+132;Cleveland;Minneapolis;2026-03-26T09:00:00;2026-03-31T13:00:00;Step Deck;4900;Keep refrigerated;34909;Medical Supplies;96;1436;48x8x10
+133;Columbus;Cincinnati;2026-03-23T06:00:00;2026-03-25T14:00:00;Tanker;8000;Do not stack;9497;Produce;77;2324;40x8x8
+134;Memphis;San Diego;2026-04-05T14:00:00;2026-04-09T14:00:00;Dry Van;6000;Do not stack;16135;Beverages;66;1901;53x8x9
+135;Houston;Oklahoma City;2026-04-11T06:00:00;2026-04-13T12:00:00;Step Deck;2100;Fragile - handle with care;26242;Furniture;195;587;53x8x10
+136;Pittsburgh;Albuquerque;2026-03-20T13:00:00;2026-03-24T13:00:00;Reefer;700;Oversized load - pilot car required;37307;Steel;72;303;40x8x9
+137;Charlotte;Columbus;2026-04-19T08:00:00;2026-04-20T12:00:00;Lowboy;2700;Tarp required;23543;Textiles;190;850;40x8x4
+138;New York;Salt Lake City;2026-04-04T09:00:00;2026-04-07T13:00:00;Flatbed;5100;Team drivers required;42316;Furniture;30;1625;40x8x5
+139;Oklahoma City;Atlanta;2026-04-26T11:00:00;2026-05-01T14:00:00;Lowboy;4000;Inside delivery requested;26790;Electronics;34;1227;48x8x4
+140;Orlando;Baltimore;2026-04-10T06:00:00;2026-04-13T09:00:00;Box Truck;3800;Oversized load - pilot car required;10408;Hardware;162;1425;26x8x8
+141;Denver;Baton Rouge;2026-03-21T08:00:00;2026-03-26T11:00:00;Tanker;1700;Lumper service available;28769;Chemicals;116;691;40x8x8
+142;New Orleans;San Diego;2026-04-26T13:00:00;2026-04-27T16:00:00;Box Truck;3800;No special requirements;30196;Steel;86;1209;24x8x8
+143;Oklahoma City;New Orleans;2026-03-29T07:00:00;2026-04-01T12:00:00;Step Deck;9400;Keep refrigerated;43364;Machinery;175;2172;48x8x10
+144;Sacramento;Portland;2026-03-30T09:00:00;2026-04-03T10:00:00;Lowboy;2800;Keep refrigerated;24604;Electronics;16;614;48x8x4
+145;Charlotte;Mesa;2026-03-31T13:00:00;2026-04-04T13:00:00;Tanker;4300;Chains and binders required;17999;Plastic Products;87;1655;40x8x8
+146;New York;Columbus;2026-03-22T07:00:00;2026-03-27T14:00:00;Dry Van;600;No special requirements;16307;Plastic Products;174;286;53x8x9
+147;Dallas;San Diego;2026-04-24T06:00:00;2026-04-26T08:00:00;Flatbed;2800;Keep refrigerated;10911;Plastic Products;102;1301;48x8x6
+148;Chicago;Milwaukee;2026-04-09T10:00:00;2026-04-10T14:00:00;Reefer;2400;No touch freight;17974;Paper Products;96;779;53x8x9
+149;Portland;Houston;2026-04-01T13:00:00;2026-04-06T16:00:00;Reefer;6100;Time sensitive delivery;34055;Appliances;35;1716;48x8x9
+150;Philadelphia;Seattle;2026-03-30T10:00:00;2026-04-04T13:00:00;Tanker;1800;Tarp required;36943;Food;125;522;40x8x8
+151;Columbus;Albuquerque;2026-04-05T14:00:00;2026-04-08T16:00:00;Flatbed;500;Driver assist needed;27999;Furniture;184;251;40x8x5
+152;Louisville;Boston;2026-04-21T10:00:00;2026-04-26T13:00:00;Lowboy;8700;Oversized load - pilot car required;39617;Machinery;122;2442;48x8x4
+153;Omaha;Columbus;2026-04-10T13:00:00;2026-04-15T21:00:00;Lowboy;3900;Oversized load - pilot car required;8375;Lumber;37;1024;40x8x4
+154;Denver;Memphis;2026-03-30T08:00:00;2026-04-03T12:00:00;Flatbed;1800;Team drivers required;33763;Paper Products;198;718;40x8x5
+155;Milwaukee;Sacramento;2026-03-26T07:00:00;2026-03-28T14:00:00;Tanker;3600;Team drivers required;26806;Electronics;164;918;40x8x8
+156;St. Louis;El Paso;2026-04-02T11:00:00;2026-04-04T18:00:00;Box Truck;7100;Liftgate required at delivery;43561;Machinery;76;2181;26x8x8
+157;Denver;Las Vegas;2026-03-28T09:00:00;2026-03-29T16:00:00;Lowboy;2800;Tarp required;21745;Food;59;684;40x8x4
+158;Cleveland;Albuquerque;2026-04-05T07:00:00;2026-04-07T12:00:00;Dry Van;6000;Stackable cargo;44785;Plastic Products;145;2410;48x8x9
+159;Miami;Cleveland;2026-04-16T10:00:00;2026-04-19T18:00:00;Box Truck;1000;Keep refrigerated;22976;Clothing;77;310;24x8x8
+160;Salt Lake City;Raleigh;2026-04-14T08:00:00;2026-04-17T11:00:00;Tanker;600;Liftgate required at delivery;7222;Clothing;115;293;40x8x8
+161;Miami;San Jose;2026-04-18T14:00:00;2026-04-23T17:00:00;Lowboy;5100;Hazmat - proper documentation required;26346;Automotive Parts;135;1413;48x8x4
+162;Raleigh;Jacksonville;2026-04-14T07:00:00;2026-04-15T09:00:00;Box Truck;6400;Tarp required;24510;Building Materials;102;1922;24x8x8
+163;San Francisco;Nashville;2026-04-15T11:00:00;2026-04-17T13:00:00;Reefer;3500;Oversized load - pilot car required;10193;Produce;163;927;40x8x9
+164;New York;San Diego;2026-05-03T12:00:00;2026-05-07T18:00:00;Flatbed;3900;Driver assist needed;10488;Steel;186;1463;48x8.5x6
+165;San Francisco;El Paso;2026-03-21T13:00:00;2026-03-25T15:00:00;Dry Van;4300;Do not stack;26280;Electronics;112;1394;40x8x9
+166;Raleigh;Mesa;2026-04-19T08:00:00;2026-04-23T12:00:00;Tanker;2100;Call before delivery;17020;Paper Products;42;704;40x8x8
+167;Los Angeles;Atlanta;2026-05-03T09:00:00;2026-05-04T16:00:00;Dry Van;5700;Stackable cargo;24679;Steel;172;1870;53x8x9
+168;Detroit;New Orleans;2026-03-23T12:00:00;2026-03-27T18:00:00;Flatbed;3700;Temperature controlled 34-38F;35875;Electronics;42;1258;48x8x6
+169;El Paso;New York;2026-03-21T06:00:00;2026-03-25T13:00:00;Flatbed;3400;Fragile - handle with care;43906;Medical Supplies;159;1543;48x8.5x6
+170;El Paso;Boston;2026-03-25T14:00:00;2026-03-29T22:00:00;Lowboy;4600;Liftgate required at delivery;34009;Plastic Products;162;1550;40x8x4
+171;Oklahoma City;Dallas;2026-04-10T09:00:00;2026-04-12T12:00:00;Step Deck;7800;Lumper service available;7471;Lumber;172;1807;48x8x10
+172;Charlotte;Miami;2026-04-20T09:00:00;2026-04-21T15:00:00;Flatbed;6500;Do not stack;38225;Medical Supplies;70;1911;48x8x6
+173;Oklahoma City;Baltimore;2026-04-13T10:00:00;2026-04-17T14:00:00;Box Truck;900;Hazmat - proper documentation required;22065;Hardware;12;317;26x8x8
+174;Fort Worth;Dallas;2026-03-30T12:00:00;2026-04-03T15:00:00;Reefer;7900;Hazmat - proper documentation required;21447;Machinery;54;2029;53x8x9
+175;Raleigh;Oklahoma City;2026-04-10T13:00:00;2026-04-14T20:00:00;Lowboy;4000;Lumper service available;7653;Beverages;110;1371;48x8x4
+176;New York;Baltimore;2026-04-27T13:00:00;2026-04-29T18:00:00;Tanker;6100;No touch freight;36626;Clothing;68;2208;40x8x8
+177;Indianapolis;Omaha;2026-04-27T09:00:00;2026-04-28T16:00:00;Dry Van;2800;Inside delivery requested;37673;Hardware;175;1002;53x8x9
+178;Atlanta;Las Vegas;2026-03-28T13:00:00;2026-04-02T18:00:00;Reefer;8400;Driver assist needed;30279;Machinery;171;2357;53x8x9
+179;Fresno;New York;2026-05-01T06:00:00;2026-05-05T12:00:00;Dry Van;5300;No touch freight;10459;Electronics;125;2468;40x8x9
+180;Dallas;Cincinnati;2026-04-10T08:00:00;2026-04-13T16:00:00;Step Deck;7000;Driver assist needed;5916;Agricultural Products;183;1961;53x8x10
+181;Minneapolis;Fort Worth;2026-03-20T08:00:00;2026-03-21T10:00:00;Tanker;7900;Temperature controlled 34-38F;11078;Medical Supplies;65;2467;40x8x8
+182;Cincinnati;Memphis;2026-04-21T11:00:00;2026-04-25T19:00:00;Step Deck;6400;Time sensitive delivery;34402;Clothing;125;2280;53x8x10
+183;Houston;Cleveland;2026-04-01T12:00:00;2026-04-02T19:00:00;Tanker;4500;Oversized load - pilot car required;25277;Produce;90;1881;40x8x8
+184;Columbus;Baton Rouge;2026-03-27T12:00:00;2026-04-01T19:00:00;Step Deck;4400;Lumper service available;24776;Hardware;70;1484;48x8x10
+185;San Antonio;Charlotte;2026-04-13T08:00:00;2026-04-14T15:00:00;Box Truck;3900;Stackable cargo;29641;Appliances;87;1526;26x8x8
+186;Minneapolis;Chicago;2026-05-03T09:00:00;2026-05-07T16:00:00;Tanker;1400;Oversized load - pilot car required;32932;Lumber;135;469;40x8x8
+187;Boston;Omaha;2026-04-24T06:00:00;2026-04-27T14:00:00;Flatbed;1300;Liftgate required at delivery;24783;Plastic Products;124;378;48x8.5x6
+188;Las Vegas;Charlotte;2026-04-07T10:00:00;2026-04-11T14:00:00;Tanker;6600;Chains and binders required;28440;Automotive Parts;145;2151;40x8x8
+189;New York;Minneapolis;2026-03-25T14:00:00;2026-03-30T17:00:00;Lowboy;7000;Do not stack;18564;Agricultural Products;24;2246;48x8x4
+190;Baltimore;Columbus;2026-04-27T14:00:00;2026-04-30T22:00:00;Tanker;1900;Time sensitive delivery;12373;Textiles;157;458;40x8x8
+191;Cleveland;Philadelphia;2026-04-01T11:00:00;2026-04-06T13:00:00;Dry Van;3800;Team drivers required;23796;Clothing;18;1927;53x8x9
+192;Fresno;Cleveland;2026-04-30T09:00:00;2026-05-01T13:00:00;Tanker;700;Liftgate required at delivery;35540;Automotive Parts;91;283;40x8x8
+193;San Diego;Baton Rouge;2026-04-16T09:00:00;2026-04-17T16:00:00;Box Truck;5800;Keep refrigerated;36727;Medical Supplies;127;1938;24x8x8
+194;Boston;Albuquerque;2026-04-17T09:00:00;2026-04-21T17:00:00;Lowboy;2800;No touch freight;17778;Produce;90;706;40x8x4
+195;Denver;Baltimore;2026-05-02T07:00:00;2026-05-05T08:00:00;Dry Van;1100;No special requirements;35019;Food;151;411;40x8x9
+196;Houston;Philadelphia;2026-03-28T12:00:00;2026-03-30T19:00:00;Reefer;4900;Residential delivery;36301;Appliances;31;1814;53x8x9
+197;San Jose;Cincinnati;2026-04-29T09:00:00;2026-04-30T13:00:00;Step Deck;3000;Fragile - handle with care;11036;Lumber;3;666;48x8x10
+198;Sacramento;Minneapolis;2026-04-29T12:00:00;2026-05-02T17:00:00;Lowboy;3400;Keep refrigerated;22397;Building Materials;76;1386;40x8x4
+199;Los Angeles;Albuquerque;2026-03-29T09:00:00;2026-03-30T13:00:00;Reefer;1000;Hazmat - proper documentation required;16384;Chemicals;140;283;48x8x9
+200;Las Vegas;Philadelphia;2026-05-02T08:00:00;2026-05-03T14:00:00;Tanker;6500;Team drivers required;41021;Chemicals;155;2180;40x8x8
