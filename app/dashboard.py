@@ -219,7 +219,7 @@ main.show { opacity: 1; }
 <header>
   <div class="header-inner">
     <div class="logo-wrap">
-      <img class="logo-img" src="/static/HappyRobot.webp" alt="HappyRobot"/>
+      <img class="logo-img" src="/static/happy.png" alt="HappyRobot"/>
       <div class="divider"></div>
       <span class="header-tag">Swift Cargo Brokers &middot; Carrier Sales &middot; Operations</span>
     </div>
