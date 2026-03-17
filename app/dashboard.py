@@ -4,7 +4,6 @@ from .call_log_service import read_all_logs
 
 router = APIRouter()
 
-
 def _aggregate(logs: list[dict]) -> dict:
     total = len(logs)
     if total == 0:
